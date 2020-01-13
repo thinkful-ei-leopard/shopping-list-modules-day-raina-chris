@@ -1,7 +1,3 @@
-const store = {
-  items: [],
-  hideCheckedItems: false
-};
 
 const generateItemElement = function (item) {
   let itemTitle = `<span class="shopping-item shopping-item__checked">${item.name}</span>`;
@@ -144,3 +140,7 @@ export default {
   render,
   bindEventListeners
 };
+
+import store from './store.js';
+console.log(store);
+console.log(foo);
