@@ -142,5 +142,4 @@ export default {
 };
 
 import store from './store.js';
-console.log(store);
-console.log(foo);
+import item from './item.js';
