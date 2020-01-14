@@ -18,15 +18,16 @@ function addItem(name) {
 }
 
 function findAndToggleChecked(id) {
-  let item = this.findById(id);
+  let item = findById(id);
   item.checked = !item.checked;
 }
 
 
-function findAndUpdateName(id, newName) {
+function findAndUpdateName(id, itemName) {
   try {
-    item.validateName(newName);
-    this.findById(id).name = newName;
+    item.validateName(itemName);
+    let item = findById(id);
+    item.name = itemName;
   }
   catch(error) {
     console.log(`Cannot add item: ${error.message}`);
@@ -34,7 +35,7 @@ function findAndUpdateName(id, newName) {
 }
 
 function findAndDelete(id) {
-  let index = this.items.findIndex(obj => obj.id === id);
+  let index = this.items.findIndex(item=> item.id === id);
   this.items.splice(index, 1);
 }
 
