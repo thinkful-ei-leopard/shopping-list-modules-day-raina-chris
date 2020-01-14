@@ -45,6 +45,7 @@ const addItemToShoppingList = function (itemName) {
     item.validateName(itemName);
     // create a new item if name is valid
     store.items.push(item.create(itemName));
+    render();
   } catch(error) {
     console.log(`Cannot add item: ${error.message}`);
   }
