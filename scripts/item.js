@@ -1,5 +1,3 @@
-
-
 function validateName(name) {
   if (!name) {
     throw new Error('Name must not be blank');
@@ -7,11 +5,12 @@ function validateName(name) {
 }
 
 function create(name) {
-  return {
+  const item = {
     id: cuid(),
     name,
     checked: false
   };
+  return item;
 }
 
 export default {
