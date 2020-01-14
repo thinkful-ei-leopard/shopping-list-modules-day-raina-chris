@@ -23,11 +23,11 @@ function findAndToggleChecked(id) {
 }
 
 
-function findAndUpdateName(id, itemName) {
+function findAndUpdateName(id, newName) {
   try {
-    item.validateName(itemName);
+    item.validateName(newName);
     let item = findById(id);
-    item.name = itemName;
+    item.name = newName;
   }
   catch(error) {
     console.log(`Cannot add item: ${error.message}`);
@@ -39,6 +39,9 @@ function findAndDelete(id) {
   this.items.splice(index, 1);
 }
 
+function toggleCheckedFilter() {
+  this.hideCheckedItems = !this.hideCheckedItems;
+} 
 
 export default {
   items,
@@ -47,5 +50,6 @@ export default {
   addItem,
   findAndToggleChecked,
   findAndUpdateName,
-  findAndDelete
+  findAndDelete,
+  toggleCheckedFilter
 };

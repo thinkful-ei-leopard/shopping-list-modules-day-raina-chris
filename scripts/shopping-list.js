@@ -115,9 +115,9 @@ const handleDeleteItemClicked = function () {
 /**
  * Toggles the store.hideCheckedItems property
  */
-const toggleCheckedItemsFilter = function () {
-  store.hideCheckedItems = !store.hideCheckedItems;
-};
+// const toggleCheckedItemsFilter = function () {
+//   store.hideCheckedItems = !store.hideCheckedItems;
+// };
 
 /**
  * Places an event listener on the checkbox
@@ -127,7 +127,7 @@ const toggleCheckedItemsFilter = function () {
 
 const handleToggleFilterClick = function () {
   $('.js-filter-checked').click(() => {
-    toggleCheckedItemsFilter();
+    store.toggleCheckedFilter();
     render();
   });
 };
@@ -139,7 +139,7 @@ const handleEditShoppingItemSubmit = function () {
     event.preventDefault();
     const id = getItemIdFromElement(event.currentTarget);
     const itemName = $(event.currentTarget).find('.shopping-item').val();
-    store.findAndUpdateName(id, newName);
+    store.findAndUpdateName(id, itemName);
     render();
   });
 };
